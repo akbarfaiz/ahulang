@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "148245948552",
+    "project_id": "ahulang-flutter",
+    "storage_bucket": "ahulang-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148245948552:android:b36d7d3645ecff226cd73d",
+        "android_client_info": {
+          "package_name": "com.example.ahulang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148245948552-609r2bgroj9p5m3nqhbj8qhu9e28df1b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFuFqniVOWekiJW4TPjYSePEZ3I0ji1PE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148245948552-609r2bgroj9p5m3nqhbj8qhu9e28df1b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
