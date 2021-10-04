@@ -7,7 +7,7 @@
 
    <application
         android:label="Ahulang"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ahulang">
 
         <meta-data android:name="com.google.android.geo.API_KEY" 
         android:value="AIzaSyDoqWfWX8T6GY5r_Niky8MkZqTUcwvH8AI"
