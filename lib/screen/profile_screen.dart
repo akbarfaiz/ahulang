@@ -19,10 +19,10 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final CollectionService collection = Get.put(CollectionService());
+  CollectionService? collection;
   User? user;
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  CollectionReference? ref;
+  Query? ref;
   File? image;
   StorageService? storage = StorageService();
 
@@ -43,13 +43,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Future<Null> _getUserDetail() async {
     var current = _auth.currentUser;
-    ref = collection.collect;
     _auth.authStateChanges().listen((event) {
       user = event;
     });
     if (current != null) {
       setState(() {
         user = current;
+        collection = Get.put(CollectionService(uid: current.uid));
+        ref = collection!.collect;
       });
     } else {
       await AuthService.signOut();
@@ -97,8 +98,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: const EdgeInsets.all(5.0),
             child: TextField(
                 enabled: false,
-                controller: TextEditingController(
-                    text: '${collection.dataUser['name']}'),
+                controller: TextEditingController(text: '${user!.displayName}'),
                 decoration: InputDecoration(
                     hintText: 'name',
                     labelText: 'Name',
@@ -110,7 +110,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: TextField(
                 enabled: false,
                 controller: TextEditingController(
-                    text: '${collection.dataUser['nip']}'),
+                    text: '${collection!.dataUser['nip']}'),
                 decoration: InputDecoration(
                     hintText: 'nip',
                     labelText: 'NIP',
@@ -133,7 +133,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: TextField(
                 enabled: false,
                 controller: TextEditingController(
-                    text: '${collection.dataUser['sector']}'),
+                    text: '${collection!.dataUser['sector']}'),
                 decoration: InputDecoration(
                     hintText: 'sector',
                     labelText: 'Sector',
