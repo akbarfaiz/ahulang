@@ -1,5 +1,6 @@
 import 'package:ahulang/ahulang_theme.dart';
 import 'package:ahulang/api/auth_service.dart';
+import 'package:ahulang/component/avatar.dart';
 import 'package:ahulang/home.dart';
 import 'package:ahulang/model/route_manager.dart';
 import 'package:ahulang/model/tab_manager.dart';
@@ -50,19 +51,19 @@ class _LoginState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
-                width: 150,
-                height: 150,
+                width: 300,
+                height: 300,
                 decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor,
-                    shape: BoxShape.circle),
-              ),
-              SizedBox(
-                height: 20,
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                      image: Image.asset('assets/ahulang.jpeg').image,
+                      fit: BoxFit.fill),
+                ),
               ),
               Text(
                 "Login",
                 style: TextStyle(
-                    fontSize: 20, color: Theme.of(context).primaryColor),
+                    fontSize: 30, color: Theme.of(context).primaryColor),
               ),
               SizedBox(
                 height: 20,
